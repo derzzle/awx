@@ -8,6 +8,7 @@ localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env pyth
 # by default the base will be used to search for ansible/awx_web and ansible/awx_task
 dockerhub_base=ansible
 
+############  BEGIN :   N/A 
 # Openshift Install
 # Will need to set -e openshift_password=developer -e docker_registry_password=$(oc whoami -t)
 #           or set -e openshift_token=TOKEN
@@ -16,10 +17,13 @@ dockerhub_base=ansible
 # openshift_user=developer
 # openshift_skip_tls_verify=False
 # openshift_pg_emptydir=True
+############
+
 
 # Kubernetes Install
-# kubernetes_context=test-cluster
-# kubernetes_namespace=awx
+kubernetes_context=service-alex
+kubernetes_namespace=pilot
+
 # Optional Kubernetes Variables
 # pg_image_registry=docker.io
 # pg_serviceaccount=awx
@@ -31,7 +35,8 @@ dockerhub_base=ansible
 # Kubernetes Ingress Configuration
 # You can use the variables below to configure Kubernetes Ingress
 # Set hostname
-# kubernetes_ingress_hostname=awx.example.org
+kubernetes_ingress_hostname=awx.xnet.shapecat-labs.com
+
 # Add annotations. The example below shows an annotation to be used with Traefik but other Ingress controllers are also supported
 # kubernetes_ingress_annotations={'kubernetes.io/ingress.class': 'traefik', 'traefik.ingress.kubernetes.io/redirect-entry-point': 'https'}
 # Specify a secret for TLS termination
